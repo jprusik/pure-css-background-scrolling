@@ -1,0 +1,91 @@
+<html>
+	<head>
+		<style type="text/css">
+			body{
+				background-color: #58CAF0;
+			}
+			/* ==========================================================================
+			   Background Containers 
+			   ========================================================================== */
+			#foreground{
+				/* Background Animation (animation timer controls scroll speed)
+				   ========================================================================== */
+				-o-animation: backmove 15s linear infinite; /* Opera will support @keyframes in v12*/
+				-moz-animation: backmove 15s linear infinite;
+				-webkit-animation: backmove 15s linear infinite;
+				animation: backmove 15s linear infinite; /* IE will support animation in v10 */
+				
+				/* Container Element Size/Positioning
+				   ========================================================================== */
+				width:100%; /* The width value determines the size of the container element, not the background image itself */
+				height:122px; /* Height of element should be equal to the pixel height of the background image to prevent clipping */
+				position:fixed; /* If you want your background to scroll with the window, change the position to "absolute" */
+				left:0px; /* You only need this if your body has left/right padding */
+				bottom:0px; /* Anchors the container to the bottom of the page (you can also anchor to the top). */
+				z-index:-1; /* Use z-index to position layers and ensure the container elements do not unintentionally overlap any other page elements */
+				
+				/* Background Image Settings
+				   ========================================================================== */
+				background-image: url('./clouds1.png');
+				background-repeat: repeat-x;
+				/*background-size:50% 50%;*/ /* You can adjust the image size with CSS, but you'll need to update the container height and x-position with the adjusted value */
+			}
+			#background{
+				-o-animation: backmove 60s linear infinite;
+				-moz-animation: backmove 60s linear infinite;
+				-webkit-animation: backmove 60s linear infinite;
+				animation: backmove 60s linear infinite;
+				width:100%;
+				height:224px;
+				position:fixed;
+				left:0px;
+				bottom:14px;
+				background-image: url('./clouds2.png');
+				background-repeat: repeat-x;
+				z-index:-2;
+			}
+
+			/* ==========================================================================
+			   Animation Keyframes
+			   ========================================================================== */
+			/* 
+			 * 
+			 * You'll need a background that can be tiled horizontally to achieve the
+			 * correct appearence.
+			 * 
+			 * I'm able to reuse the same animation here because the first layer is exactly
+			 * half the size of the second layer, resulting in the same visual effect.
+			 * If your background images are different widths, you'll likely need to create
+			 * a seperate animation for each background layer to prevent visible jumping.
+			 * 
+			 */
+			@-o-keyframes backmove{
+				0%   {background-position: 0px 0;}
+				100%  {background-position: 1536px 0;}
+			}
+			@-moz-keyframes backmove{
+				0%   {background-position: 0px 0;}
+				100%  {background-position: 1536px 0;}
+			}
+			@-webkit-keyframes backmove{
+				0%   {background-position: 0px 0;}
+				100%  {background-position: 1536px 0;}
+			}
+			@keyframes backmove{
+				0%   {background-position: 0px 0;} /* Switch animation start values with end values to change direction of the animation */
+				100%  {background-position: 1536px 0;} /* End x position value should be equal to pixel width of the image */
+			}
+		</style>
+	</head>
+	<body style="margin:0px;">
+		<!-- Depending on what you're trying to achieve, you may find it helpful to position the #foreground and #background within a wrapper div -->
+		<div id="foreground"></div>
+		<div id="background"></div>
+		<div style="height:auto;width:50%;padding:20px;margin:20px auto;background-color:white;border:1px solid gray;border-radius:15px;box-shadow: 3px 3px 3px black;font-family: Helvetica,arial,freesans,clean,sans-serif;">
+			<p style="font-weight:bold;">Pure CSS Background Scrolling is a technique for incorporating perpetually scrolling backgrounds, independent of the page contents or position, utilizing only CSS. Any number of layers (with their own animations) may be added in order to achieve an appearance of dimension.</p>
+			<p>Check out the git repositroy <a href="http://jprusik.github.com/pure-css-background-scrolling/">here</a>.</p>
+			<hr/>
+			<p style="font-style:italic;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi euismod interdum nulla nec tempus. Vestibulum aliquet tristique libero et iaculis. Quisque vitae lorem erat, sit amet egestas leo. Praesent mollis, felis vel porttitor imperdiet, quam orci imperdiet elit, id ultricies metus lorem eget nibh. Curabitur non fermentum arcu. Aenean mauris sem, convallis ullamcorper mollis sed, dictum aliquam justo. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nunc at arcu nec urna fermentum condimentum in nec nisl. Curabitur turpis tellus, ultricies laoreet tristique vitae, lobortis at diam. Sed ultricies, magna eget iaculis elementum, ante dui ornare lacus, in varius purus diam eu felis. Quisque blandit enim quis purus viverra aliquet non a nulla. Curabitur augue libero, consequat nec convallis sit amet, lacinia vitae ligula.<br/><br/>Nunc a nunc dolor, sit amet hendrerit diam. Vivamus tortor est, placerat nec volutpat a, tincidunt tincidunt arcu. Suspendisse potenti. Vivamus ac odio augue. Sed sit amet sapien enim, quis tincidunt libero. Fusce tempor placerat mi nec adipiscing. Duis ullamcorper adipiscing aliquam. Nunc in purus et mi eleifend ornare.<br/><br/>Integer dictum suscipit accumsan. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Aliquam erat volutpat. Donec sit amet nulla faucibus magna pretium posuere ut vitae leo. In est orci, pulvinar eu mattis non, sagittis vel est. Praesent vel enim elit, tincidunt hendrerit nibh. Donec malesuada enim sed turpis iaculis in varius sapien fringilla. Mauris vehicula odio at lectus accumsan non bibendum ipsum pharetra. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae;</p>
+		</div>
+	</body>
+</html>
