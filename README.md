@@ -13,6 +13,7 @@ Browser support
 * Google Chrome
 * Mozilla Firefox
 * Apple Safari
+* Opera 12 or higher
 
 Advantages
 ----------
@@ -23,7 +24,7 @@ Advantages
 
 Limitations
 -----------
-* IE & Opera do not yet support animation/@keyframe
+* IE does not yet support animation/@keyframe
 * Depending on implementation, method can be process intensive
 
 License
