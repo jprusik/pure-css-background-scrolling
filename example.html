@@ -22,7 +22,7 @@
 				position:fixed; /* If you want your background to scroll with the window, change the position to "absolute" */
 				left:0px; /* You only need this if your body has left/right padding */
 				bottom:0px; /* Anchors the container to the bottom of the page (you can also anchor to the top). */
-				z-index:-1; /* Use z-index to position layers and ensure the container elements do not unintentionally overlap any other page elements */
+				z-index:1; /* Use z-index to position layers and ensure the container elements do not unintentionally overlap any other page elements */
 				
 				/* Background Image Settings
 				   ========================================================================== */
@@ -81,7 +81,7 @@
 		<!-- Depending on what you're trying to achieve, you may find it helpful to position the #foreground and #background within a wrapper div -->
 		<div id="foreground"></div>
 		<div id="background"></div>
-		<div style="height:auto;width:50%;padding:20px;margin:20px auto;background-color:white;border:1px solid gray;border-radius:15px;box-shadow: 3px 3px 3px black;font-family: Helvetica,arial,freesans,clean,sans-serif;">
+		<div style="height:90%;width:50%;opacity:0.75;padding:20px;margin:20px auto;background-color:white;border:1px solid gray;border-radius:15px;box-shadow: 3px 3px 3px black;font-family: Helvetica,arial,freesans,clean,sans-serif;">
 			<p style="font-weight:bold;">Pure CSS Background Scrolling is a technique for incorporating perpetually scrolling backgrounds, independent of the page contents or position, utilizing only CSS. Any number of layers (with their own animations) may be added in order to achieve an appearance of dimension.</p>
 			<p>Check out the git repositroy <a href="https://github.com/jprusik/pure-css-background-scrolling">here</a>.</p>
 			<hr/>
